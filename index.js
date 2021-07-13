@@ -125,7 +125,7 @@ function init()
         }
         else if(res.team_member == "Intern")
         {
-            questionsForIntern(); 
+            questionsForInterns(); 
         }
         else 
         {
@@ -172,7 +172,7 @@ function questionsForInterns()
      .then((resIntern) => {
          const intern = new Intern(resIntern.internName, resIntern.internId, resIntern.internEmail, resIntern.internSchool); 
          // diagnostics 
-         engineer.printProperties(); 
+         intern.printProperties(); 
          team_intern.push(intern); 
          if (resIntern.team_member == "Engineer") 
          {
@@ -199,20 +199,19 @@ function generatePage()
        <meta charset="UTF-8">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Team progile Generator</title>
+       <title>Team Profile Generator</title>
        <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css"> 
     </head>
      <body>
        <header style="background-color:red;">
        My Team 
-       </header>`
+       </header>
+       <div class= "wrapper"> 
+       <div class= "engineer"> `
     var engineerHTML = ""
-    //    for(let i=0;i<engineerarray;i++){
-    //        engineerHTML += `<iv class ="card">
-    //            ${team_engineer[i].name}`
-    //    }
-    
+   
        for(let i = 0; i < team_engineer.length; i++)
        {
            engineerHTML += `
@@ -224,16 +223,38 @@ function generatePage()
            <ul class="list-group list-group-flush">
              <li class="list-group-item">${team_engineer[i].id}</li>
              <li class="list-group-item">${team_engineer[i].email}</li>
-             <li class="list-group-item">${team_engineer[i].getGithub}</li>
+             <li class="list-group-item">${team_engineer[i].getGithub()}</li>
            </ul>
-         </div>`
+         </div>
+         `
        }
 
-    var closingHTML =`   </body>   </html>`
+       var internHTML = `<div class= "intern"> `
+       for(let i = 0; i < team_intern.length; i++)
+       {
+           internHTML += `
+           <div class="card" style="width: 18rem;">
+           <div class="card-header">
+           ${team_intern[i].name}
+           ${team_intern[i].getRole()}
+           </div>
+           <ul class="list-group list-group-flush">
+             <li class="list-group-item">${team_intern[i].id}</li>
+             <li class="list-group-item">${team_intern[i].email}</li>
+             <li class="list-group-item">${team_intern[i].getSchool()}</li>
+           </ul>
+         </div>
+         `
+       }
+
+    var closingHTML =` </div>
+                        </div> 
+                        </body>   </html>`
     // TODO: repeat for intern, ask if there are more than 1 manager
     // write to file  
-    var HTMLpage = openingHTML + engineerHTML + closingHTML
-     fs.writeFileSync("./output/index.html",HTMLpage,(err,succ)=>{
+    // var HTMLpage = openingHTML + engineerHTML + internHTML + closingHTML
+    var HTMLpage = openingHTML + engineerHTML + internHTML + closingHTML; 
+     fs.writeFileSync("./dist/index.html",HTMLpage,(err,succ)=>{
         if (err) throw err;
         console.log(succ)   
      })
