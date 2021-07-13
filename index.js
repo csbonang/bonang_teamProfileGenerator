@@ -6,6 +6,11 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern"); 
 const chalk = require("chalk"); 
 
+// create arrays to store user input for each occupation 
+var team_engineer = []; 
+var team_intern = []; 
+var team_manager = []; 
+
 
 // prompt the user: array of objects 
 console.log("Time to build team"); 
@@ -135,6 +140,9 @@ function questionsForEngineers()
      inquirer.prompt(eng_questions)
      .then((resEngineer) => {
          const engineer = new Engineer(resEngineer.engName, resEngineer.engId, resEngineer.engEmail, resEngineer.engGitHub); 
+         // add new engineer 
+         team_engineer.push(engineer); 
+         
          // diagnostics 
          engineer.printProperties(); 
          if (resEngineer.team_member == "Engineer") 
@@ -157,6 +165,7 @@ function questionsForInterns()
          const intern = new Intern(resIntern.internName, resIntern.internId, resIntern.internEmail, resIntern.internSchool); 
          // diagnostics 
          engineer.printProperties(); 
+         team_intern.push(intern); 
          if (resIntern.team_member == "Engineer") 
          {
              questionsForEngineers(); 
@@ -168,4 +177,37 @@ function questionsForInterns()
          }
      })
 }
+
+// function generatePage()
+// {
+//    // template HTML 
+//    var openinhtml = `<!DOCTYPE html>
+//    <html lang="en">
+//    <head>
+//        <meta charset="UTF-8">
+//        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//        <title>Team progile Generator</title>
+       
+//    </head>
+//    <body>
+//        <header>
+   
+//        </header>`
+
+
+//         var engineerHTML = ""
+//        for(let i=0;i<engineerarray;i++){
+//            engineerHTML += `<iv class ="card">
+//                ${engineerarray[i].name}`
+//        }
+//     var closingHTML =`   </body>   </html>`
+//     var HTMLpage = openingHTML + engineerHTML++closingHTML
+//      fs.writeFileSync("./output/index.html",HTMLpage,(err,succ)=>{
+//         if (err) throw err;
+//         console.log(succ)
+//      })
+//    // write file (fs part)
+
+// }
 init(); 
