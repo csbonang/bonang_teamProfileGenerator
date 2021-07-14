@@ -209,14 +209,17 @@ function generatePage()
        My Team 
        </header>
        <div class= "wrapper"> 
-       <div class= "engineer"> `
+        `
     
     var managerHTML = ""
       managerHTML += `
+      <div class= "manager">
       <div class="card" style="width: 18rem;">
            <div class="card-header">
-           ${teamManager.name}
+           ${teamManager.name}  
+           <div>
            ${teamManager.getRole()}
+           </div> 
            </div>
            <ul class="list-group list-group-flush">
              <li class="list-group-item">${teamManager.id}</li>
@@ -227,9 +230,10 @@ function generatePage()
              </li>
              <li class="list-group-item">${teamManager.getOfficeNumber()}</li>
            </ul>
+         </div>
          </div>`
 
-    var engineerHTML = ""
+    var engineerHTML = `<div class= "engineer">`
    
        for(let i = 0; i < team_engineer.length; i++)
        {
@@ -237,7 +241,9 @@ function generatePage()
            <div class="card" style="width: 18rem;">
            <div class="card-header">
            ${team_engineer[i].name}
+           <div> 
            ${team_engineer[i].getRole()}
+           </div> 
            </div>
            <ul class="list-group list-group-flush">
              <li class="list-group-item">${team_engineer[i].id}</li>
@@ -252,14 +258,18 @@ function generatePage()
          `
        }
 
-       var internHTML = `<div class= "intern"> `
+       var internHTML = `
+       </div>
+       <div class= "intern"> `
        for(let i = 0; i < team_intern.length; i++)
        {
            internHTML += `
            <div class="card" style="width: 18rem;">
            <div class="card-header">
            ${team_intern[i].name}
+           <div> 
            ${team_intern[i].getRole()}
+           </div> 
            </div>
            <ul class="list-group list-group-flush">
              <li class="list-group-item">${team_intern[i].id}</li>

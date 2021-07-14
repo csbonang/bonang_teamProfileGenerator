@@ -1,0 +1,56 @@
+
+header{
+    grid-area:header;
+    /* border-radius: 25px; */
+    padding-top: 1.5vw;
+    height: 5vw;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+}
+.engineer
+{
+    grid-area:engineer;
+    border-radius: 25px;
+    color:white; 
+    font-weight: bold;
+}
+
+.intern
+{
+    grid-area:intern;
+    border-radius: 25px;
+    color:white; 
+    font-weight: bold;
+}
+
+.manager 
+{
+    grid-area:manager;
+    border-radius: 25px;
+    color:white; 
+    font-weight: bold;
+
+}
+.wrapper {
+    display: grid;
+    grid-gap: 50px;
+    /* grid-template-columns: 230px 120px 120px; */
+    grid-template-columns: 4vw 4vw 6vw;
+    grid-template-areas:
+     "header header header header"
+     "manager manager manager manager"
+     "engineer engineer engineer engineer"
+     "intern intern intern intern";
+   /* sets background color for whole website */
+    /* background-color: var(--gray_brown);  */
+    /* padding-left: 8%; */
+}
+
+.card-header
+{
+    background-color: blue;
+    height: 4vw;
+    text-align: center;
+}
+
