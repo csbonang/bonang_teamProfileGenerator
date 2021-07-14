@@ -9,7 +9,7 @@ const chalk = require("chalk");
 // create arrays to store user input for each occupation 
 var team_engineer = []; 
 var team_intern = []; 
-var team_manager = []; 
+var teamManager; 
 
 
 // prompt the user: array of objects 
@@ -118,6 +118,9 @@ function init()
     .then( (res) => {
         const inputs = res.team_member; 
         console.log(inputs); 
+        const manager = new Manager(res.tMName, res.tMId, res.tMEmail, res.tMOfficeNumber); 
+         // add new engineer 
+        teamManager = manager;  
         if (res.team_member == "Engineer") 
         {
             questionsForEngineers(); 
@@ -132,10 +135,7 @@ function init()
             generatePage(); 
         }
       
-
-
     })
-    
 }
 
 function questionsForEngineers()
@@ -210,6 +210,21 @@ function generatePage()
        </header>
        <div class= "wrapper"> 
        <div class= "engineer"> `
+    
+    var managerHTML = ""
+      managerHTML += `
+      <div class="card" style="width: 18rem;">
+           <div class="card-header">
+           ${teamManager.name}
+           ${teamManager.getRole()}
+           </div>
+           <ul class="list-group list-group-flush">
+             <li class="list-group-item">${teamManager.id}</li>
+             <li class="list-group-item">${teamManager.email}</li>
+             <li class="list-group-item">${teamManager.getOfficeNumber()}</li>
+           </ul>
+         </div>`
+
     var engineerHTML = ""
    
        for(let i = 0; i < team_engineer.length; i++)
@@ -253,7 +268,7 @@ function generatePage()
     // TODO: repeat for intern, ask if there are more than 1 manager
     // write to file  
     // var HTMLpage = openingHTML + engineerHTML + internHTML + closingHTML
-    var HTMLpage = openingHTML + engineerHTML + internHTML + closingHTML; 
+    var HTMLpage = openingHTML + managerHTML + engineerHTML + internHTML + closingHTML; 
      fs.writeFileSync("./dist/index.html",HTMLpage,(err,succ)=>{
         if (err) throw err;
         console.log(succ)   
