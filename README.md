@@ -20,6 +20,7 @@ The team profile generator displays a roster of all the team members. For each t
 * [Questions](#questions)
 
 ## Video
+[Example](https://drive.google.com/file/d/1CalF5GCNrUqxa7KJo6EEKDEj7uKx8DVD/view)
 
 ## Installation 
 To install the necessary dependencies, run the following command: 
