@@ -3,10 +3,11 @@ header{
     grid-area:header;
     /* border-radius: 25px; */
     padding-top: 1.5vw;
-    height: 5vw;
+    height: 6vw;
     color:white;
     font-weight: bold;
     text-align: center;
+    font-size: xx-large;
 }
 .engineer
 {
@@ -14,6 +15,7 @@ header{
     border-radius: 25px;
     color:white; 
     font-weight: bold;
+    
 }
 
 .intern
@@ -36,26 +38,34 @@ header{
     display: grid;
     grid-gap: 50px;
     /* grid-template-columns: 230px 120px 120px; */
-    grid-template-columns: 4vw 4vw 6vw;
+    grid-template-columns: 4vw 4vw; 
+    grid-template-rows: 4vw, 4vw;
+    grid-column-gap: 2vw;
     grid-template-areas:
      "header header header header"
      "manager manager manager manager"
      "engineer engineer engineer engineer"
-     "intern intern intern intern";
+     "intern intern intern intern"
+     "footer footer footer footer"; 
    /* sets background color for whole website */
     /* background-color: var(--gray_brown);  */
     /* padding-left: 8%; */
+    padding-left: 20vw;
 }
 
 .card-header
 {
-    background-color: blue;
+    background-color: rgb(237, 180, 245);
     height: 4vw;
     text-align: center;
 }
 
 #contactMe_info
 {
+    text-decoration: none;
+}
+
+a{
     text-decoration: none;
 }
 

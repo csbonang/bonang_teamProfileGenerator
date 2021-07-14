@@ -205,7 +205,7 @@ function generatePage()
         <link rel="stylesheet" href="./style.css"> 
     </head>
      <body>
-       <header style="background-color:red;">
+       <header style="background-color:rgb(111, 162, 240);">
        My Team 
        </header>
        <div class= "wrapper"> 
@@ -216,10 +216,10 @@ function generatePage()
       <div class= "manager">
       <div class="card" style="width: 18rem;">
            <div class="card-header">
-           ${teamManager.name}  
-           <div>
+           ${teamManager.name} , 
+           
            ${teamManager.getRole()}
-           </div> 
+           
            </div>
            <ul class="list-group list-group-flush">
              <li class="list-group-item"> Id: ${teamManager.id}</li>
@@ -240,10 +240,10 @@ function generatePage()
            engineerHTML += `
            <div class="card" style="width: 18rem;">
            <div class="card-header">
-           ${team_engineer[i].name}
-           <div> 
+           ${team_engineer[i].name} ,
+           
            ${team_engineer[i].getRole()}
-           </div> 
+           
            </div>
            <ul class="list-group list-group-flush">
              <li class="list-group-item">Id: ${team_engineer[i].id}</li>
@@ -267,10 +267,10 @@ function generatePage()
            internHTML += `
            <div class="card" style="width: 18rem;">
            <div class="card-header">
-           ${team_intern[i].name}
-           <div> 
+           ${team_intern[i].name} ,
+            
            ${team_intern[i].getRole()}
-           </div> 
+            
            </div>
            <ul class="list-group list-group-flush">
              <li class="list-group-item"> Id: ${team_intern[i].id}</li>
