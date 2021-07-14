@@ -6,15 +6,15 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern"); 
 const chalk = require("chalk"); 
 
-// create arrays to store user input for each occupation 
+// arrays are used to store user input for each occupation 
 var team_engineer = []; 
 var team_intern = []; 
+// teamManager: it appears from the README that there is only one Manager per team so 
+// assign the manager object to teamManager 
 var teamManager; 
 
-
-// prompt the user: array of objects 
 console.log("Time to build team"); 
-
+// questions: prompts the user with the starter questions 
 const questions = [
     {
         type: "input", 
@@ -44,12 +44,7 @@ const questions = [
     }
 ]
 
-// questions for engineer 
-// Ask for 
-// Name 
-// Id
-// Email 
-// GitHub 
+// eng_questions: prompts the user with questions for engineer 
 const eng_questions = [
     {
         type: "input",
@@ -79,7 +74,7 @@ const eng_questions = [
     }
 ]
 
-
+// intern_questions: prompts the user with questions for intern
 const intern_questions = [
     {
         type: "input",
@@ -109,7 +104,8 @@ const intern_questions = [
     }
 ]
 
-
+// init:: prompts the user on all questions for team members dependent on their team member 
+//        choices. 
 function init()
 {
     // prompt the users
@@ -138,6 +134,9 @@ function init()
     })
 }
 
+// questionsForEngineers:: prompts the user with questions for engineer team member 
+//                         creates an engineer object that holds all the user's inputs and stores it in the object's properties 
+//                         Then depending on the user's choice, questions for engineer , questions for interns, or generating the html page is called. 
 function questionsForEngineers()
 {
      // prompt the user 
@@ -165,6 +164,11 @@ function questionsForEngineers()
      })
 
 }
+
+
+// questionsForInterns::   prompts the user with questions for intern team member 
+//                         creates an intern object that holds all the user's inputs and stores it in the object's properties 
+//                         Then depending on the user's choice, questions for engineer, questions for interns, or generating the html page is called.
 function questionsForInterns()
 {
      // prompt the user 
@@ -190,6 +194,7 @@ function questionsForInterns()
      })
 }
 
+// generatePage:: generates the format for the HTML page and writes it to index.html
 function generatePage()
 {
    // template HTML 

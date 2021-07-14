@@ -1,4 +1,5 @@
-
+/* header: increases the length of the header, bolds the font, font color is 
+set to color, and increases font size */
 header{
     grid-area:header;
     /* border-radius: 25px; */
@@ -9,6 +10,7 @@ header{
     text-align: center;
     font-size: xx-large;
 }
+/* engineer: sets the grid area for engineer, sets the color, and size*/
 .engineer
 {
     grid-area:engineer;
@@ -17,7 +19,7 @@ header{
     font-weight: bold;
     
 }
-
+/* intern: sets the grid area for intern, sets the color, and size*/
 .intern
 {
     grid-area:intern;
@@ -25,7 +27,7 @@ header{
     color:white; 
     font-weight: bold;
 }
-
+/* manager: sets the grid area for manager, sets the color, and size*/
 .manager 
 {
     grid-area:manager;
@@ -34,6 +36,7 @@ header{
     font-weight: bold;
 
 }
+/*acts a grid class for all the cards*/
 .wrapper {
     display: grid;
     grid-gap: 50px;
@@ -51,8 +54,9 @@ header{
     /* background-color: var(--gray_brown);  */
     /* padding-left: 8%; */
     padding-left: 20vw;
+  
 }
-
+/*adjusts header width and aligns text to center*/
 .card-header
 {
     background-color: rgb(237, 180, 245);
@@ -60,11 +64,19 @@ header{
     text-align: center;
 }
 
+/* adds a shadow effect on each card */
+.card
+{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/*ensures that there is not underline for email links*/
 #contactMe_info
 {
     text-decoration: none;
 }
 
+/* ensures there are no underline for any links */
 a{
     text-decoration: none;
 }
