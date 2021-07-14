@@ -222,13 +222,13 @@ function generatePage()
            </div> 
            </div>
            <ul class="list-group list-group-flush">
-             <li class="list-group-item">${teamManager.id}</li>
+             <li class="list-group-item"> Id: ${teamManager.id}</li>
              <li class="list-group-item">
                 <a id="contactMe_info" href = "mailto:${teamManager.email}" alt=Email>
-                ${teamManager.email}
+                Email: ${teamManager.email}
                 </a> 
              </li>
-             <li class="list-group-item">${teamManager.getOfficeNumber()}</li>
+             <li class="list-group-item"> Office number: ${teamManager.getOfficeNumber()}</li>
            </ul>
          </div>
          </div>`
@@ -246,13 +246,14 @@ function generatePage()
            </div> 
            </div>
            <ul class="list-group list-group-flush">
-             <li class="list-group-item">${team_engineer[i].id}</li>
+             <li class="list-group-item">Id: ${team_engineer[i].id}</li>
              <li class="list-group-item">
                 <a id="contactMe_info" href = "mailto:${team_engineer[i].email}" alt=Email>
-                ${team_engineer[i].email}
+               Email:  ${team_engineer[i].email}
                 </a> 
              </li>
-             <li class="list-group-item"> <a href= "https://github.com/${team_engineer[i].getGithub()}"> ${team_engineer[i].getGithub()} </a></li>
+             <li class="list-group-item"> <a href= "https://github.com/${team_engineer[i].getGithub()}">
+              GitHub: ${team_engineer[i].getGithub()} </a></li>
            </ul>
          </div>
          `
@@ -272,13 +273,13 @@ function generatePage()
            </div> 
            </div>
            <ul class="list-group list-group-flush">
-             <li class="list-group-item">${team_intern[i].id}</li>
+             <li class="list-group-item"> Id: ${team_intern[i].id}</li>
              <li class="list-group-item">
                 <a id="contactMe_info" href = "mailto:${team_intern[i].email}" alt=Email>
-                ${team_intern[i].email}
+                Email: ${team_intern[i].email}
                 </a> 
              </li>
-             <li class="list-group-item">${team_intern[i].getSchool()}</li>
+             <li class="list-group-item">School: ${team_intern[i].getSchool()}</li>
            </ul>
          </div>
          `
