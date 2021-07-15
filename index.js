@@ -207,6 +207,8 @@ function generatePage()
        <title>Team Profile Generator</title>
        <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!--Font Awesome--> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./style.css"> 
     </head>
      <body>
@@ -221,7 +223,7 @@ function generatePage()
       <div class= "manager">
       <div class="card" style="width: 18rem;">
            <div class="card-header">
-           ${teamManager.name} , 
+           ${teamManager.name} <i class="fas fa-user-check"></i>, 
            
            ${teamManager.getRole()}
            
@@ -245,7 +247,7 @@ function generatePage()
            engineerHTML += `
            <div class="card" style="width: 18rem;">
            <div class="card-header">
-           ${team_engineer[i].name} ,
+           ${team_engineer[i].name} <i class="fas fa-coffee"></i>,
            
            ${team_engineer[i].getRole()}
            
@@ -272,7 +274,7 @@ function generatePage()
            internHTML += `
            <div class="card" style="width: 18rem;">
            <div class="card-header">
-           ${team_intern[i].name} ,
+           ${team_intern[i].name} <i class="fas fa-user-graduate"></i>,
             
            ${team_intern[i].getRole()}
             

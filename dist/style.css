@@ -17,6 +17,9 @@ header{
     border-radius: 25px;
     color:white; 
     font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px; 
     
 }
 /* intern: sets the grid area for intern, sets the color, and size*/
@@ -26,6 +29,9 @@ header{
     border-radius: 25px;
     color:white; 
     font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px; 
 }
 /* manager: sets the grid area for manager, sets the color, and size*/
 .manager 
@@ -34,6 +40,7 @@ header{
     border-radius: 25px;
     color:white; 
     font-weight: bold;
+    display: flex;
 
 }
 /*acts a grid class for all the cards*/
@@ -41,19 +48,14 @@ header{
     display: grid;
     grid-gap: 50px;
     /* grid-template-columns: 230px 120px 120px; */
-    grid-template-columns: 4vw 4vw; 
-    grid-template-rows: 4vw, 4vw;
-    grid-column-gap: 2vw;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
     grid-template-areas:
-     "header header header header"
-     "manager manager manager manager"
-     "engineer engineer engineer engineer"
-     "intern intern intern intern"
-     "footer footer footer footer"; 
-   /* sets background color for whole website */
-    /* background-color: var(--gray_brown);  */
-    /* padding-left: 8%; */
-    padding-left: 20vw;
+     "header"
+     "manager"
+     "engineer"
+     "intern"
+     "footer"; 
   
 }
 /*adjusts header width and aligns text to center*/
@@ -68,6 +70,7 @@ header{
 .card
 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin:auto; 
 }
 
 /*ensures that there is not underline for email links*/
@@ -79,5 +82,12 @@ header{
 /* ensures there are no underline for any links */
 a{
     text-decoration: none;
+}
+
+
+.fa-user-check, .fa-coffee, .fa-user-graduate
+{
+    font-size: larger;
+    
 }
 
